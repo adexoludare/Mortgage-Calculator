@@ -9,17 +9,34 @@ public class App {
         final byte months_in_year = 12;
         final byte percent = 100;
 
+        int principal;
+        double annualIntrestRate;
+        byte years;
+
         Scanner Scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Principal ($1k - $1M): ");
+            principal = Scanner.nextInt();
+            if (principal >= 1_000 && principal <= 1_000_000)
+                break;
+            System.out.println("Enter a value between 1000 and 1000000");
+        }
 
-        System.out.println("Principal: ");
-        int principal = Scanner.nextInt();
-        // next() and nextLine() are use for strings,
-
-        System.out.print("Annual Intrest Rate: ");
-        double annualIntrestRate = Scanner.nextDouble();
-
-        System.out.print("Period (Years): ");
-        byte years = Scanner.nextByte();
+        while (true) {
+            System.out.print("Annual Intrest Rate(0% -30%) : ");
+            annualIntrestRate = Scanner.nextDouble();
+            if (annualIntrestRate > 0 && annualIntrestRate <= 30)
+                break;
+            System.out.println("Invalid Rate! Enter a value greater than 0 and less than or equal to 30");
+        }
+        while (true) {
+            System.out.print("Period (Years): ");
+            years = Scanner.nextByte();
+            if (years > 0 && years <= 30) {
+                break;
+            }
+            System.out.println("Enter a value greater than 0 and less than or equal to 30");
+        }
 
         int numberOfPayment = years * months_in_year;
         System.out.println(
@@ -36,4 +53,5 @@ public class App {
         System.out.println(mortgageFormatted);
 
     }
+
 }
