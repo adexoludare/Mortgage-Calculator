@@ -11,6 +11,13 @@ where
 - r is your monthly intrest rate, calculated by dividing your annual intrest rate by 12
 - n is your number of payments(the number of months you will be paying the loan)
 
+The next formula is used to calculate the remaining loan balance (B) of a fixed payment loan after p months.
+
+![Mortgage Loan Balance](./images/loanBalance.PNG)
+
+- L is the obtained loan i.e P of the 1st equation
+- p is the number of payment made
+
 ## Folder Structure
 
 The workspace contains two folders by default, where:
